@@ -1,0 +1,24 @@
+<ul>
+<h2>Hi <%= @current_user.name%>! </h2>
+<h3> Tasks </h3>
+
+<a class="btn btn-warning" href='/new' role="button">Add Task</a>
+</ul>
+<ul>
+  <% @tasks.each do |task| %>       
+    <div class="card">
+    <h5 class="card-header"><%= task.title %></h5>
+    <div class="card-body">
+      <h5 class="card-title"><%= task.body%></h5>
+      <% if (task.tag).match(/priority/i) %>
+      <a href='/<%= task.tag%>' type="button" class="btn btn-outline-danger"><%= task.tag%></a>
+      <% elsif (task.tag).match(/low/i)%>
+      <a href='/<%= task.tag%>' type="button" class="btn btn-outline-success"><%= task.tag%></a>
+      <% else %>
+      <a href='/<%= task.tag%>' type="button" class="btn btn-outline-primary"><%= task.tag%></a>
+      <% end %>
+      <a href=<%= task_path(task)%> class="btn btn-primary">Go to =></a>
+    </div>
+  </div>  
+  <% end %>
+</ul>

@@ -1,0 +1,26 @@
+
+<%= form_with model: task do |form| %>
+    
+<ul>
+    <div class="mb-3">
+    <label for="task_title" class="form-label">Title</label>
+    <input type="text" class="form-control" name="task[title]" id="task_title" value=<%= task.title%>>
+    </div>
+  
+
+    <div class="mb-3">
+    <label for="task_body" class="form-label">Details</label>
+    <textarea name="task[body]" id="task_body" class="form-control" rows="3"><%= task.body%></textarea>
+    </div>
+
+    <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Tag</label>
+    <input type="text" class="form-control" id="task_tag" name="task[tag]" value=<%= task.tag%> >
+    </div>
+  
+    <div>
+    <button type="submit" class="bbtn btn-outline-primary"><%= form.submit %></button>
+    </div>
+</ul>
+    
+  <% end %>

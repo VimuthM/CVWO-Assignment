@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<%= favicon_link_tag asset_path('task.png') %>
+  <head>
+    <title>Taskify</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application' %>
+  </head>
+
+  <body>
+  <nav class="navbar navbar-light" style="background-color: #c2f25c;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href='/home'>
+      <img src='http://localhost:3000/packs/media/images/task-0d8f88d6.png' style="width:28px;height:31px;" class="d-inline-block align-top">
+      Taskify
+    </a>
+    <a href='/' class="btn btn-dark" type="submit">Logout</a>
+  </div>
+</nav>
+    <%= yield %>
+  </body>
+</html>
+<%= javascript_pack_tag 'index' %>

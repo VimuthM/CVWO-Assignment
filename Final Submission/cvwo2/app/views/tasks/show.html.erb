@@ -1,0 +1,16 @@
+<ul>
+</ul>
+
+<div class="card text-center">
+  <div class="card-header">
+  <%= @task.title %>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= @task.body %></p></h5>
+    <a href=<%= edit_task_path(@task)%> class="btn btn-outline-secondary">Edit</a>
+    <a data-confirm="Sure?" data-method="delete" href=<%= task_path(@task)%> class="btn btn-outline-danger">Delete</a>
+  </div>
+  <div class="card-footer text-muted">
+    <%= @task.tag %>
+  </div>
+</div>
